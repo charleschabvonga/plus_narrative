@@ -1,0 +1,17 @@
+/* Webfont: Lato-Heavy */@font-face {
+    font-family: 'Lato-Heavy';
+    src: url('Lato-Heavy.woff2') format('woff2'), /* Modern Browsers */
+         url('Lato-Heavy.woff') format('woff');
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+/* Webfont: Lato-Regular */@font-face {
+    font-family: 'Lato-Regular';
+    src: url('Lato-Regular.woff2') format('woff2'), /* Modern Browsers */
+        url('Lato-Regular.woff') format('woff');
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}

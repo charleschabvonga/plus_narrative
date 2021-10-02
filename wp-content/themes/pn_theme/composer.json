@@ -1,0 +1,36 @@
+{
+    "name": "plusnarrative/pn-theme",
+    "type": "wordpress-theme",
+    "license": "GPL-3.0-only",
+    "authors": [
+        {
+            "name": "PlusNarrative",
+            "email": "dev@plusnarrative.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5"
+    },
+    "require-dev": {
+        "automattic/vipwpcs": "*",
+        "dealerdirect/phpcodesniffer-composer-installer": "*",
+        "squizlabs/php_codesniffer": "*"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "post-root-test-install": [
+            "vendor/bin/phpcs --config-set cinstalled_paths vendor/wp-coding-standards/wpcs,vendor/vipcs"
+        ]
+    }
+}
