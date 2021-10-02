@@ -1,0 +1,192 @@
+.text-container{
+    width: 100%;
+    background-color: #ebf2f7;
+    overflow: hidden;
+    padding-top: 70px;
+    padding-bottom: 70px;
+
+    @include break-to--960{
+        padding-bottom: 30px;
+    }
+
+    .inner-container{
+        position: relative;
+        width: 100%;
+        display: flex;
+        @include wider-than(medium) {
+            padding-left: 150px;
+        }
+
+        .top-separator{
+            height: 14px;
+        }
+
+        @media (max-width: 1120px){
+            padding-left: 30px;
+        }
+
+        @include break-to--960{
+            padding-left: 0;
+            flex-direction: column;
+            flex-flow: column-reverse;
+            
+        }
+
+        @include break-to--960{
+            .left-outer-container{
+                width: 100%;
+                overflow-x: scroll;
+                transition: all .3s ease-in-out;
+            }
+        }
+
+        .left-container{
+            width: 180px;
+            position: relative;
+            padding-bottom: 20px;
+            padding-top: 55px;
+
+            .each-block{
+                display: inline-block;
+                border-bottom: solid 1px #cdcdcd;
+                padding-bottom: 20px;
+                padding-right: 20px;
+
+                &.hide-block{
+                    display: none;
+                }
+
+                .each-block-heading{
+                    font-size: 15px;
+                    font-weight: 600;
+                    line-height: 1.1;
+                    margin-bottom: 6px;
+                    color: #304659;
+                }
+
+                .each-block-tag{
+                    color: #8298ab;
+                    font-size: 15px;
+                }
+
+                @include break-to--960{
+                    border-bottom: none;
+                    white-space: pre-line;
+                    width: 70%;
+                    vertical-align: top;
+
+                    .each-block-heading{
+                        margin-bottom: -30px;
+                    }
+                }
+            }
+
+            .each-block, .each-block:hover{
+                text-decoration: none;
+            }
+
+            @include break-to--960{
+                width: 700px;
+                display: flex;
+                padding: 0;
+                margin-top: -30px;
+                padding-left: 15px;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                .top-separator{
+                    height: 0;
+                }
+            }
+        }
+
+        .right-container-block{
+            display: none;
+            width: 490px;
+            margin-left: 120px;
+
+            p:first-of-type {
+                font-size: 25px;
+                color: #3b5266;
+
+                @include break-to--960{
+                    font-size: 20px;
+                }
+            }
+
+            p{
+                font-size: 17px;
+            }
+
+            h3, h4{
+                font-size: 25px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+
+                @include break-to--960{
+                    font-size: 20px;
+                }
+            }
+
+            .tag-line{
+                font-size: 13px;
+                color: #8298ab;
+                font-weight: 600;
+                text-transform: uppercase;
+                margin-bottom: 25px;
+                display: block;
+            }
+
+            @include break-to--960{
+                width: 750px;
+            }
+
+            @include break-to--960{
+                width: 100%;
+                margin-left: 0px;
+                padding-right: ($standard/2);
+                padding-left: ($standard/2);
+            }
+
+            .content-heading{
+                color: $primary;
+                font-size: 45px;
+                text-decoration: none;
+                font-weight: bold;
+                padding-bottom: 20px;
+                display: block;
+                &:hover{
+                    text-decoration: none;
+                }
+
+                @include break-to--960{
+                    font-size: 35px;
+                }
+            }
+
+            .text-content{
+                margin-top: 30px;
+                font-size: 20px;
+                color: $primary;
+                line-height: 1.1;
+            }
+
+            .text-elemnt{
+                font-size: 17px;
+                font-weight: 600;
+                color: $primary;
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+
+            .text-lighter{
+                font-size: 15px;
+                color: $primary;
+                color: $primary;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+._component-testimonial--card{
+    width: 100%;
+
+    @include wider-than(medium) {
+        width: 32%;
+        margin: 0 0 ($standard*2);
+    }
+
+    margin-bottom: $standard;
+    background: #e1e9f0;
+
+    ._component-testimonial--text{
+        position: relative;
+        z-index: 2;
+        padding: 25px 20px 0;
+
+        @include wider-than(medium) {
+            padding: $standard 25px 0;
+        }
+
+        p {
+            margin-bottom: 0;
+            font-size: 17px;
+            @include wider-than(medium) {
+                font-size: 18px;
+            }
+        }
+    }
+
+    ._component-testimonial--user{
+        position: relative;
+        padding: $standard;
+        display: flex;
+
+        ._component-testimonial--profile{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center top;
+        }
+
+        ._component-testimonial--user-details{
+            margin-left: 15px;
+            .user-names{
+                font-weight: bold;
+                font-size: 20px;
+            }
+
+            .user-designation{
+                position: relative;
+                font-size: 15px;
+                color: #8298ab;
+                padding-top: 5px;
+            }
+        }
+    }
+}

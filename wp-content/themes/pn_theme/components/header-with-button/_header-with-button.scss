@@ -1,0 +1,266 @@
+#_component-header-with-button {
+    background-color: $secondary;
+    padding: 0 ($standard/2);
+    @include wider-than(medium) {
+        padding: 0 50px;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ._component-header-with-button--logo img{
+        width: 82px;
+        object-fit: cover;
+    }
+
+    button, ._component-header-with-button--button{
+        background-color: $primary;
+        color: $white;
+        padding: ($standard/3) ($standard - 5);
+        border: solid 2px $primary;
+        font-size: 16px;
+        text-decoration: none;
+
+        &:hover{
+            background-color: $white;
+            color: $primary;
+        }
+    }
+    
+    #_component-header-with-button--menu{
+        display: none;
+        background-color: $secondary;
+
+        &.show{
+            display: block;
+        }
+
+        ul{
+            padding: 0;
+            margin: 0;
+
+            li{
+                list-style: none;
+            }
+        }
+    }
+
+    @include break--1080 {
+        ._component-header-with-button--button-container{
+            ._component-header-with-button--button{
+                margin-left: $standard/2;
+            }
+        }
+
+        #_component-header-with-button--menu{
+            display: contents;
+        }
+
+        ._component-header-with-button--toggler{
+            display: none;
+        }
+
+        ._component-header-with-button--menu ul{
+            display: flex;
+
+            li a, li:hover a{
+                padding: ($standard - 5) ($standard);
+            }
+
+            > li{
+                transition: 1s;
+                display: inline-block;
+                position: relative;
+            
+                a{
+                    color: $primary;
+                    font-size: 17px;
+                    letter-spacing: 1px;
+                    font-weight: 400;
+                    text-transform: capitalize;
+                    text-decoration: none;
+                    display: block;
+                    white-space: nowrap;
+                }
+
+                > ul{
+                    position: absolute;
+                    display: none;
+                    top: 100%;
+                    z-index: 2;
+
+                    li{
+                        position: relative;
+    
+
+                        a{
+                            color: $primary;
+                            background-color: $secondary;
+                            display: flex;
+                        }
+                    } 
+                }
+
+                &:hover {
+                    > a{
+                        color: $white;
+                        background-color: $primary;
+                    }
+
+                    > a > ul > li > a{
+                        background-color: $primary;
+                    }
+
+                    > ul {
+                        display: block;
+
+                        > li > ul{
+                            display: none;
+                        }
+
+                        > li:hover{
+                            position: relative;
+
+                            > ul{
+                                display: block;
+                                top: 0;
+                                left: 100%;
+
+                                > li a{
+                                    color: $white;
+                                    background-color: $grey;
+
+                                    &:hover{
+                                        background-color: $tertiary;
+                                        color: $white;
+                                    }
+                                }
+                                
+                            }
+                        }
+                        
+                    }
+                }
+            }
+        }
+
+        ._component-header-with-button--menu.no-buttons{
+            ul li a, ul li:hover a{
+                padding: ($standard - 5) ($standard*2);
+            }
+        }
+    }
+
+    @media screen and (max-width: 1260px) and (min-width: 1080px){
+        ._component-header-with-button--button-container{
+            ._component-header-with-button--button{
+                margin-left: $standard/2;
+            }
+        }
+
+        ._component-header-with-button--menu{
+            ul li a, ul li:hover a{
+                padding: ($standard - 5) ($standard/2);
+            }
+
+            &.no-buttons{
+                ul li a, ul li:hover a{
+                    padding: ($standard - 5) ($standard);
+                }
+            }
+        }
+    }
+
+    @include break-to--1080{
+        .close-menu{
+            display: none;
+        }
+
+        #_component-header-with-button--toggler{
+            text-transform: uppercase;
+            margin: ($standard/2) 0;
+            background-color: $primary;
+            color: $white;
+        
+            &.open{
+                background-color: $white;
+                color: $primary;
+
+                .open-menu{
+                    display: none;
+                }
+
+                .close-menu{
+                    display: block;
+                }
+            }
+        }
+
+        ._component-header-with-button--button-container{
+            ._component-header-with-button--button{
+                display: block;
+                margin: 15px;
+                text-align: center;
+            }
+        }
+        
+        #_component-header-with-button--menu.show{
+            background-color: $secondary;
+            position: absolute;
+            left: 0;
+            top: 70px;
+            z-index: 2;
+            height: 100%;
+            width: 100%;
+            text-align: left;
+
+            ul > li{
+                background-color: $secondary;
+                padding: ($standard) ($standard/2);
+                display: block;
+                justify-content: space-between;
+                align-items: center;
+                position: relative;
+                list-style-position: inside;
+                
+                a{
+                    padding: 0;
+                    text-transform: uppercase;
+                    color: $primary;
+                    font-size: 13px;
+                    text-decoration: none;
+                }
+
+                > ul{
+                    display: none;
+
+                    > li {
+                        background-color: $primary;
+                        a{
+                            color: $white;
+                        }
+
+                        > ul > li {
+                            background-color: $grey;
+                            a{
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+
+                ul.sub-menu.show{
+                    display: block;
+                    position: relative;
+                    top: 100%;
+                    left: 0;
+                    z-index: 2;
+                    width: calc(100% + 30px);
+                    margin-left: -($standard/2);
+                    margin-bottom: -$standard;
+                    margin-top: $standard;
+                }
+            }
+        }
+    }
+}
